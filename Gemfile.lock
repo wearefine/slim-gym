@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/sinatra/sinatra.git
-  revision: e7f65ab3de21819fa7d505bcda2d53948094f5e4
+  revision: f7cda5d47e7a6c499315a32489b762f6151b6100
   specs:
     sinatra (1.4.5)
       rack (~> 1.4)
@@ -26,6 +26,7 @@ GEM
     daemons (1.1.9)
     eventmachine (1.0.3)
     ffi (1.9.3)
+    json (1.8.1)
     mini_portile (0.6.0)
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
@@ -52,6 +53,7 @@ PLATFORMS
 
 DEPENDENCIES
   compass (~> 1.0.1)
+  json
   nokogiri
   sinatra!
   slim (~> 2.0.3)

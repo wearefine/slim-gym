@@ -1,2 +1,0 @@
-_buf = []; _temple_html_pretty1 = /<code|<pre|<textarea/; _buf << ("<h2>\n  This\n</h2>"\
-""); _buf = _buf.join
