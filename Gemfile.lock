@@ -26,11 +26,11 @@ GEM
     daemons (1.1.9)
     eventmachine (1.0.3)
     ffi (1.9.3)
+    hpricot (0.8.6)
+    html2slim (0.1.0)
+      hpricot
     json (1.8.1)
-    mini_portile (0.6.0)
     multi_json (1.10.1)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -53,8 +53,8 @@ PLATFORMS
 
 DEPENDENCIES
   compass (~> 1.0.1)
+  html2slim
   json
-  nokogiri
   sinatra!
   slim (~> 2.0.3)
   thin

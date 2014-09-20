@@ -1,9 +1,29 @@
 html
 head
 	title Slim Playground
-	script src="jquery.min.js"
-	script src="test.js"
+	script src="/javascripts/jquery.min.js"
+	script src="/javascripts/codemirror/codemirror.js"
+	script src="/javascripts/codemirror/addon/matchbrackets.js"
+	script src="/javascripts/codemirror/addon/matchtags.js"
+	script src="/javascripts/codemirror/mode/htmlmixed.js"
+	script src="/javascripts/codemirror/mode/xml.js"
+	script src="/javascripts/codemirror/mode/jade.js"
+	script src="/javascripts/codemirror/mode/ruby.js"
+	script src="/javascripts/codemirror/mode/slim.js"
+	script src="/javascripts/test.js"
+	link rel="stylesheet" href="/stylesheets/foundation.min.css"
+	link rel="stylesheet" href="/javascripts/codemirror/codemirror.css"
+	link rel="stylesheet" href="/stylesheets/tomorrow-night-eighties.css"
+	link rel="stylesheet" href="/stylesheets/style.css"
 body
-	textarea id="slim_code" name="slim_code"
-	#slim_output
-	#slim_text
+	.container
+		.row
+			.large-4.columns
+				h2 Sandbox
+				textarea#slim_code
+			.large-4.columns
+				h2 Code
+				textarea#slim_text
+			.large-4.columns
+				h2 HTML
+				.reset#slim_output
