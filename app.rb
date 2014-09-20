@@ -7,6 +7,7 @@ require 'slim'
 require 'json'
 require 'slim/erb_converter'
 require 'html2slim'
+require 'redcarpet'
 
 Slim::Engine.default_options[:pretty] = true
 
@@ -35,12 +36,29 @@ post '/convert2slim' do
   { render: output_html.to_s }.to_json
 end
 
+post '/convertFromERB' do
+  request.body.rewind  # in case someone already read it
+  data = JSON.parse request.body.read
+  output_html = Slim::ERBConverter.new.call(data['code'])
+  { render: output_html.to_s }.to_json
+end
+
 post '/convert2html' do
   request.body.rewind  # in case someone already read it
   data = JSON.parse request.body.read
-  to_erb = Slim::ERBConverter.new.call(data['code'])
-  output_html = ERB.new(to_erb).result
+  output_html = Slim::Template.new('STDIN') { data['code'] }.render
   { render: output_html.to_s }.to_json
+end
+
+get '/test' do
+  sample = %q[
+erb:
+  <% for i in 1..10 do %>
+    <%= i %>
+  <% end %>
+]
+  output_html = Slim::Template.new('STDIN') { sample }.render
+  output_html
 end
 
 get '/stylesheets/:name.css' do

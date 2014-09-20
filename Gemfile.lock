@@ -37,6 +37,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    redcarpet (3.1.2)
     sass (3.4.4)
     slim (2.0.3)
       temple (~> 0.6.6)
@@ -55,6 +56,7 @@ DEPENDENCIES
   compass (~> 1.0.1)
   html2slim
   json
+  redcarpet
   sinatra!
   slim (~> 2.0.3)
   thin
