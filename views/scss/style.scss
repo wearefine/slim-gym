@@ -19,6 +19,9 @@ textarea {
 
 	}
 }
+.reset {
+	@include global-reset;
+}
 .CodeMirror {
 	font-family:$monospace;
 	font-size:12px;
