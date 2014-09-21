@@ -1,0 +1,97 @@
+/*
+
+    Name:       Slim Gym
+    Author:     Tim Shedor
+
+    CodeMirror template by Jan T. Sott (https://github.com/idleberg/base16-codemirror)
+
+*/
+$monospace: 'bitstream_vera_sans_monoroman', Consolas, Monaco, Menlo, 'Andale Mono', monospace;
+$light_gray: #ccc;
+$gray: #6A6A6A;
+$dark_black: #2d2d2d;
+$green: #99cc99;
+$red: #f2777a;
+$gold: #ffcc66;
+$purple: #a16a94;
+$blue: #6699cc;
+$orange: #d27b53;
+
+.cm-s-slim-gym {
+	&.CodeMirror {
+		font-family:$monospace;
+		font-size:12px;
+		background:black;
+		color:$light_gray;
+	}
+	div.CodeMirror-selected {
+		background: $dark_black !important;
+	}
+	.CodeMirror {
+		&-gutters {
+			background: black;
+			border-right: 0px;
+		}
+		&-guttermarker {
+			color: $red;
+		}
+		&-guttermarker-subtle {
+			 color: #777;
+		}
+		&-linenumber {
+			color: #515151;
+		}
+		&-cursor {
+			border-left: 1px solid $gray !important;
+		}
+		&-activeline-background {
+			background: lighten(#111, 10%) !important;
+		}
+		&-matchingbracket {
+			 text-decoration: underline;
+			 color: white !important;
+		}
+	}
+	span {
+		&.cm-comment {
+			color: $orange;
+		}
+		&.cm-atom {
+			color: $purple;
+		}
+		&.cm-number {
+			color: $purple;
+		}
+		&.cm-property, &.cm-attribute {
+			color: $green;
+		}
+		&.cm-keyword {
+			color: $red;
+		}
+		&.cm-string {
+			color: $gold;
+		}
+		&.cm-variable {
+			color: $green;
+		}
+		&.cm-variable-2 {
+			color: $blue;
+		}
+		&.cm-def {
+			color: $orange;
+		}
+		&.cm-bracket {
+			color: $light_gray;
+		}
+		&.cm-tag {
+			color: $red;
+		}
+		&.cm-link {
+			color: $purple;
+		}
+		&.cm-error {
+			background: $red;
+			color: $gray;
+		}
+	}
+}
