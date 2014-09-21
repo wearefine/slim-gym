@@ -7,45 +7,39 @@
 
 */
 $monospace: 'bitstream_vera_sans_monoroman', Consolas, Monaco, Menlo, 'Andale Mono', monospace;
-$light_gray: #ccc;
-$gray: #6A6A6A;
-$dark_black: #2d2d2d;
-$green: #99cc99;
-$red: #f2777a;
-$gold: #ffcc66;
-$purple: #a16a94;
-$blue: #6699cc;
-$orange: #d27b53;
 
+.CodeMirror {
+	min-height: 400px;
+	pre {
+		padding:3px 0;
+	}
+}
 .cm-s-slim-gym {
 	&.CodeMirror {
 		font-family:$monospace;
-		font-size:12px;
-		background:black;
-		color:$light_gray;
+		font-size:16px;
+		background:$background;
+		color:$default;
+		text-transform: none;
+		font-weight:inherit;
 	}
 	div.CodeMirror-selected {
-		background: $dark_black !important;
+		background: $selected !important;
 	}
 	.CodeMirror {
 		&-gutters {
-			background: black;
+			background: $gutterbg;
 			border-right: 0px;
 		}
-		&-guttermarker {
-			color: $red;
-		}
-		&-guttermarker-subtle {
-			 color: #777;
-		}
-		&-linenumber {
-			color: #515151;
-		}
 		&-cursor {
-			border-left: 1px solid $gray !important;
+			border-left: 1px solid $bracket !important;
 		}
 		&-activeline-background {
-			background: lighten(#111, 10%) !important;
+			background: $selected !important;
+		}
+		&-linenumber {
+			text-align:center;
+			color:$bracket;
 		}
 		&-matchingbracket {
 			 text-decoration: underline;
@@ -53,45 +47,33 @@ $orange: #d27b53;
 		}
 	}
 	span {
-		&.cm-comment {
-			color: $orange;
+		&.cm-comment, &.cm-def {
+			color: $comment;
 		}
-		&.cm-atom {
-			color: $purple;
-		}
-		&.cm-number {
-			color: $purple;
-		}
-		&.cm-property, &.cm-attribute {
-			color: $green;
-		}
-		&.cm-keyword {
-			color: $red;
-		}
-		&.cm-string {
-			color: $gold;
+		&.cm-atom, &.cm-number, &.cm-link {
+			color: $atom;
 		}
 		&.cm-variable {
-			color: $green;
+			color: $variable;
+		}
+		&.cm-property, &.cm-attribute {
+			color:$attribute;
+		}
+		&.cm-keyword, &.cm-tag {
+			color: $keyword;
+		}
+		&.cm-string {
+			color: $string;
 		}
 		&.cm-variable-2 {
-			color: $blue;
+			color: $variable2;
 		}
-		&.cm-def {
-			color: $orange;
-		}
-		&.cm-bracket {
-			color: $light_gray;
-		}
-		&.cm-tag {
-			color: $red;
-		}
-		&.cm-link {
-			color: $purple;
+		&.cm-bracket, &.cm-operator {
+			color: $bracket;
 		}
 		&.cm-error {
-			background: $red;
-			color: $gray;
+			background: $error;
+			color:white;
 		}
 	}
 }

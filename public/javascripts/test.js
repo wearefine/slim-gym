@@ -8,6 +8,8 @@
 			tabSize: 2,
 			highlightSelectionMatches: true,
 			styleActiveLine: true,
+			lineNumbers: true,
+			lineWrapping: true
 		}),
 		box_html: CodeMirror.fromTextArea(document.getElementById("box_html"), {
 			lineNumbers: false,
@@ -17,6 +19,8 @@
 			tabSize: 2,
 			highlightSelectionMatches: true,
 			styleActiveLine: false,
+			lineNumbers:true,
+			lineWrapping:true
 		})
 	};
 	slimGym = {
@@ -24,12 +28,19 @@
 			this.htmlToggleInput();
 			cmInputs.box_html.on('focus', this.toggleInput);
 			cmInputs.box_slim.on('focus', this.toggleInput);
+			cmInputs.box_slim.setValue("h1 Grab shell, dude\n- for i in 1..3\n  | P Sherman 42 Wallaby Way Sydney <br />\n.lets-ask-for-directions\n  - ['dooo', 'eeee', 'wooo'].each do |whale_speak|\n    = whale_speak\n  /! Dory you can't speak whale\nmarkdown:\n  ## He touched the butt")
+			this.displayCode(cmInputs.box_slim)
 		},
-		displayCode: function(cm, cmobject){
+		displayCode: function(cm){
 			var target;
 			slimed_code = cm.getValue();
-			slimed_code = slimed_code.replace(/<\%/g, '<%25');
-			slimed_code = slimed_code.replace(/\%>/g, '%25>');
+			if(slimed_code.indexOf('<%') && writeIn == 'html'){
+				slimed_code = slimed_code.replace(/<\%/g, '<%25');
+				slimed_code = slimed_code.replace(/\%>/g, '%25>');
+				cmInputs.box_slim.setOption('readOnly', true);
+			} else {
+				cmInputs.box_slim.setOption('readOnly', false);
+			}
 			if(writeIn == 'html'){
 				target = cmInputs.box_slim;
 			} else {
@@ -42,10 +53,10 @@
 				success: function(resp){
 					resp = JSON.parse(resp);
 					if(resp.hasOwnProperty('errorMsg')){
-						$('#errorZone').html(resp.errorMsg)
+						$('#errorZone').html(resp.errorMsg).show();
 						return;
 					} else {
-						$('#errorZone').empty();
+						$('#errorZone').hide();
 						if(writeIn == 'slim') {
 							$('#box_compiled').html(resp.html);
 						} else {
