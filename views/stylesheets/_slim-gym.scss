@@ -9,71 +9,71 @@
 $monospace: 'bitstream_vera_sans_monoroman', Consolas, Monaco, Menlo, 'Andale Mono', monospace;
 
 .CodeMirror {
-	min-height: 400px;
-	pre {
-		padding:3px 0;
-	}
+  min-height: 400px;
+  pre {
+    padding:3px 0;
+  }
 }
 .cm-s-slim-gym {
-	&.CodeMirror {
-		font-family:$monospace;
-		font-size:16px;
-		background:$background;
-		color:$default;
-		text-transform: none;
-		font-weight:inherit;
-	}
-	div.CodeMirror-selected {
-		background: $selected !important;
-	}
-	.CodeMirror {
-		&-gutters {
-			background: $gutterbg;
-			border-right: 0px;
-		}
-		&-cursor {
-			border-left: 1px solid $bracket !important;
-		}
-		&-activeline-background {
-			background: $selected !important;
-		}
-		&-linenumber {
-			text-align:center;
-			color:$bracket;
-		}
-		&-matchingbracket {
-			 text-decoration: underline;
-			 color: white !important;
-		}
-	}
-	span {
-		&.cm-comment, &.cm-def {
-			color: $comment;
-		}
-		&.cm-atom, &.cm-number, &.cm-link {
-			color: $atom;
-		}
-		&.cm-variable {
-			color: $variable;
-		}
-		&.cm-property, &.cm-attribute {
-			color:$attribute;
-		}
-		&.cm-keyword, &.cm-tag {
-			color: $keyword;
-		}
-		&.cm-string {
-			color: $string;
-		}
-		&.cm-variable-2 {
-			color: $variable2;
-		}
-		&.cm-bracket, &.cm-operator {
-			color: $bracket;
-		}
-		&.cm-error {
-			background: $error;
-			color:white;
-		}
-	}
+  &.CodeMirror {
+    font-family:$monospace;
+    font-size:16px;
+    background:$background;
+    color:$default;
+    text-transform: none;
+    font-weight:inherit;
+  }
+  div.CodeMirror-selected {
+    background: $selected !important;
+  }
+  .CodeMirror {
+    &-gutters {
+      background: $gutterbg;
+      border-right: 0px;
+    }
+    &-cursor {
+      border-left: 1px solid $bracket !important;
+    }
+    &-activeline-background {
+      background: $selected !important;
+    }
+    &-linenumber {
+      text-align:center;
+      color:$bracket;
+    }
+    &-matchingbracket {
+       text-decoration: underline;
+       color: white !important;
+    }
+  }
+  span {
+    &.cm-comment, &.cm-def {
+      color: $comment;
+    }
+    &.cm-atom, &.cm-number, &.cm-link {
+      color: $atom;
+    }
+    &.cm-variable {
+      color: $variable;
+    }
+    &.cm-property, &.cm-attribute {
+      color:$attribute;
+    }
+    &.cm-keyword, &.cm-tag {
+      color: $keyword;
+    }
+    &.cm-string {
+      color: $string;
+    }
+    &.cm-variable-2 {
+      color: $variable2;
+    }
+    &.cm-bracket, &.cm-operator {
+      color: $bracket;
+    }
+    &.cm-error {
+      background: $error;
+      color:white;
+    }
+  }
 }

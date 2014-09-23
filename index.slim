@@ -1,51 +1,77 @@
 html
 head
-	title Slim Gym
-	link rel="stylesheet" href="/stylesheets/foundation.min.css"
-	link rel="stylesheet" href="/javascripts/codemirror/codemirror.css"
-	link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arvo:400,700"
-	link rel="stylesheet" href="/stylesheets/style.css"
+  title Slim Gym
+  link rel="stylesheet" href="/stylesheets/foundation.min.css"
+  link rel="stylesheet" href="/javascripts/codemirror/codemirror.css"
+  link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arvo:400,700"
+  link rel="stylesheet" href="/stylesheets/style.css"
 body
-	.container
-		.slim_gym-align-center
-			img.slim_gym-logo src="/images/logo.svg"
-		.row
-			.large-12.columns
-				#errorZone
-		.row
-			.large-6.medium-6.columns
-				.slim_gym-title.slim_gym-title--sub Sandbox
-				textarea#box_slim(autofocus)
-			.large-6.medium-6.columns
-				.slim_gym-title.slim_gym-title--sub Code
-				textarea#box_html
-		.row
-			.large-12.medium-12.columns
-				.slim_gym-title.slim_gym-align-center HTML
-				.reset#box_compiled
+  a href="https://github.com/finedesigngroup/slim-gym"
+    img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
 
-	script src="/javascripts/jquery.min.js"
-	script src="/javascripts/codemirror/codemirror.js"
-	script src="/javascripts/codemirror/addon/matchbrackets.js"
-	script src="/javascripts/codemirror/addon/matchbrackets.js"
-	script src="/javascripts/codemirror/addon/mark-selection.js"
-	script src="/javascripts/codemirror/addon/active-line.js"
-	script src="/javascripts/codemirror/addon/keymap-sublime.js"
-	script src="/javascripts/codemirror/mode/javascript.js"
-	script src="/javascripts/codemirror/mode/htmlmixed.js"
-	script src="/javascripts/codemirror/mode/htmlembedded.js"
-	script src="/javascripts/codemirror/mode/xml.js"
-	script src="/javascripts/codemirror/mode/jade.js"
-	script src="/javascripts/codemirror/mode/ruby.js"
-	script src="/javascripts/codemirror/mode/slim.js"
-	script src="/javascripts/codemirror/mode/css.js"
-	script src="/javascripts/test.js"
+  .slim_gym-align-center
+    img.slim_gym-logo src="/images/logo.svg"
 
-	javascript:
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  .slim_gym-toolbar
+    a href="#" id="reset"
+      i.icon-loop
+    a href="#" id="openRoutines"
+      | +
+  .row
+    .large-12.columns
+      #errorZone
+  .row
+    .large-6.medium-6.columns
+      .slim_gym-title.slim_gym-title--sub Sandbox
+      textarea#box_slim(autofocus)
+    .large-6.medium-6.columns
+      .slim_gym-title.slim_gym-title--sub Code
+      textarea#box_html
+  .row
+    .large-12.medium-12.columns
+      .slim_gym-title.slim_gym-align-center HTML
+      .slim_gym-reset#box_compiled
+  .row.slim_gym-routine-modal
+  	.large-12.columns
+  		#routinesModal
 
-		ga('create', 'UA-55018874-1', 'auto');
-		ga('send', 'pageview');
+  .row
+    .large-12.slim_gym-align-center.slim_gym-credits.columns
+      .slim_gym-credits-external-links
+        a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fslim-gym.herokuapp.com"
+          i.icon-twitter2
+        a href="http:/github.com/finedesigngroup/slim-gym"
+          i.icon-github
+      .slim_gym-credits-external
+        | Powered by
+        a href="http://slim-lang.com"  Slim
+        |  and
+        a href="https://github.com/slim-template/html2slim"  HTML2Slim
+      .slim_gym-credits-internal
+        | Made <a href="http://wearefine.com" title="FINE Design Group">FINE</a> in Portland
+
+  script src="/javascripts/jquery.min.js"
+  script src="/javascripts/codemirror/codemirror.js"
+  script src="/javascripts/codemirror/addon/matchbrackets.js"
+  script src="/javascripts/codemirror/addon/matchbrackets.js"
+  script src="/javascripts/codemirror/addon/mark-selection.js"
+  script src="/javascripts/codemirror/addon/active-line.js"
+  script src="/javascripts/codemirror/addon/keymap-sublime.js"
+  script src="/javascripts/codemirror/mode/javascript.js"
+  script src="/javascripts/codemirror/mode/htmlmixed.js"
+  script src="/javascripts/codemirror/mode/htmlembedded.js"
+  script src="/javascripts/codemirror/mode/xml.js"
+  script src="/javascripts/codemirror/mode/jade.js"
+  script src="/javascripts/codemirror/mode/ruby.js"
+  script src="/javascripts/codemirror/mode/slim.js"
+  script src="/javascripts/codemirror/mode/css.js"
+  script src="/javascripts/test.js"
+
+  javascript:
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55018874-1', 'auto');
+    ga('send', 'pageview');
