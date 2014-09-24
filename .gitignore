@@ -2,6 +2,7 @@
 *.swp
 *.rbc
 *.sass-cache
+.rvmrc
 /pkg
 /doc/api
 /Gemfile.lock
