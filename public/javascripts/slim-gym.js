@@ -35,17 +35,14 @@
 		displayCode: function(cm){
 			var target;
 			slimed_code = cm.getValue();
-			if(slimed_code.indexOf('<%') && writeIn == 'html'){
+			if(writeIn == 'html'){
+				target = cmInputs.box_slim;
 				slimed_code = slimed_code.replace(/<\%/g, '<%25');
 				slimed_code = slimed_code.replace(/\%>/g, '%25>');
 				cmInputs.box_slim.setOption('readOnly', true);
 			} else {
-				cmInputs.box_slim.setOption('readOnly', false);
-			}
-			if(writeIn == 'html'){
-				target = cmInputs.box_slim;
-			} else {
 				target = cmInputs.box_html;
+				cmInputs.box_slim.setOption('readOnly', false);
 			}
 			$.ajax({
 				type:"POST",
@@ -69,6 +66,7 @@
 				},
 				error: function(resp, status, err){
 					$('#errorZone').html('Completely Unexpected Error');
+					$('body').html(resp.responseText)
 					// console.log(JSON.stringify(resp));
 				}
 			});

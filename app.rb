@@ -8,7 +8,6 @@ require 'slim/erb_converter'
 require 'html2slim'
 require 'redcarpet'
 require 'coffee-script'
-require 'cgi'
 
 Slim::Engine.default_options[:pretty] = true
 
