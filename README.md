@@ -1,6 +1,6 @@
 # Slim Gym
 
-A bi-directional [http://slim-lang.com/](Slim) editor that tones your atts, trims your tags, and gives you results in six seconds or less.
+A bi-directional [Slim](http://slim-lang.com/) editor that tones your atts, trims your tags, and gives you results in six seconds or less.
 
 ## Start from scratch
 
@@ -13,4 +13,4 @@ bundle install
 rackup -p 4567
 ```
 
-Open your browser to http://localhost:4567 and start slimming down. Slim Gym is powered by [http://www.sinatrarb.com/](Sinatra).
+Open your browser to http://localhost:4567 and start slimming down. Slim Gym is powered by [Sinatra](http://www.sinatrarb.com/).
