@@ -55,12 +55,6 @@
 						return;
 					} else {
 						$('#errorZone').hide();
-						if(writeIn == 'slim') {
-							$('#box_compiled').html(resp.html);
-						} else {
-							if(resp.compiled != '')
-								$('#box_compiled').html(resp.compiled);
-						}
 						target.setValue(resp.html);
 					}
 				},
