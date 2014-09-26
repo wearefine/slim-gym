@@ -16,7 +16,7 @@ set :scss, {
 }
 
 get '/' do
-  Slim::Template.new("index.slim", {}).render(self)
+  Slim::Template.new("index.slim", {pretty: false}).render(self)
 end
 
 post '/convert-html' do
@@ -41,6 +41,7 @@ post '/convert-slim' do
   begin
     request.body.rewind  # in case someone already read it
     data = JSON.parse request.body.read
+    Slim::Engine.default_options[:pretty] = data['pretty']
     output = Slim::Template.new('STDIN') { data['code'] }.render
     { html: output.to_s }.to_json
   rescue => e

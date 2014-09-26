@@ -3,12 +3,12 @@ $monospace: 'bitstream_vera_sans_monoroman', Consolas, Monaco, Menlo, 'Andale Mo
 $default: #ccc; //gray
 $background: #182531; //nav blue
 $selected: mix(white, $background, 5%); //grayish
-$variable: #EBC883; //gold
+$variable: #679ABD; //pale blue
 $keyword: #D74D50; //red
 $attribute: $keyword;
 $error: desaturate(#f2777a, 10%); //pale red
 $string: #FFCA6B; //gold
-$atom: $variable;
+$atom: #F78C19;
 $variable2: #6699cc; //blue
 $bracket: mix($background, $default, 60%); //light white
 $comment: mix($background, $default, 45%); //light white
@@ -31,7 +31,6 @@ textarea {
   box-shadow:none;
   border:1px solid $background;
   background:$background;
-  min-height:800px;
   &:focus {
 
   }
@@ -42,6 +41,11 @@ textarea {
   transition:color ease-in-out 0.4s;
 }
 .slim_gym {
+  &-code {
+    .CodeMirror {
+      min-height: 400px;
+    }
+  }
   &-title {
     color:#50575E;
     font-size:4em;
@@ -126,6 +130,19 @@ textarea {
   			max-width:100%;
   		}
   	}
+  }
+}
+#routinesModal {
+  width:80%;
+  margin:0 auto;
+  .slim_gym-title--sub {
+    font-size:2em;
+  }
+}
+.slim_gym-routine-modal {
+  padding-bottom:3em;
+  .CodeMirror {
+    height: 100px;
   }
 }
 #errorZone {

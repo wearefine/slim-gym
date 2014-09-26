@@ -13,30 +13,36 @@ body
     img.slim_gym-logo src="/images/logo.svg"
 
   .slim_gym-toolbar
-    a href="#" id="reset"
+    a href="#" id="reset" title="Reset"
       i.icon-loop
-    a href="#" id="openRoutines"
-      | +
+    a href="#" id="openRoutines" title="Routines"
+      i.icon-plus
+    a href="#" id="resize" title="Minify"
+      i.icon-resize2
+
   .row
     .large-12.columns
       #errorZone
-  .row
+  .row.slim_gym-code
     .large-6.medium-6.columns
-      .slim_gym-title.slim_gym-title--sub Sandbox
+      .slim_gym-title Sandbox
       textarea#box_slim(autofocus)
     .large-6.medium-6.columns
-      .slim_gym-title.slim_gym-title--sub Code
+      .slim_gym-title Code
       textarea#box_html
   .row.slim_gym-routine-modal
-  	.large-12.columns
-  		#routinesModal
+    .large-12.columns
+      .slim_gym-title.slim_gym-align-center
+        i.icon-uniE603
+        |   Routines
+      #routinesModal
 
   .row
     .large-12.slim_gym-align-center.slim_gym-credits.columns
       .slim_gym-credits-external-links
         a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fslim-gym.herokuapp.com"
           i.icon-twitter2
-        a href="http:/github.com/wearefine/slim-gym"
+        a href="http://github.com/wearefine/slim-gym"
           i.icon-github
       .slim_gym-credits-external
         | Powered by
