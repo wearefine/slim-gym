@@ -1,0 +1,7 @@
+language: ruby
+after_success:
+- chmod ugo+x notify.sh
+- '[ "${TRAVIS_PULL_REQUEST}" != "false" ] || ./notify.sh'
+env:
+  global:
+    secure: CRpzNVHSXX8C+3xsu/rXE8xY6QZsI0X+nbL0gP6dn3fmlcdSCSfuhIZLpxK4o5qGaAzzgdqjn7Vah/P7fXHgxwLddyJeA7Q6brtR7/wm6s1x/HnvYLIUxBg/V6QW71VUpbFiJrzBOxj7NbE9Rk6URnAC3wNaUIh4rXh889XCfmQ=
